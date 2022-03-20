@@ -2,8 +2,10 @@
 
 require_relative 'base'
 
-class FindInArray < Base
-  def call(array:, number:)
-    super(array, number)
+module Finders
+  class FindInArray < Base
+    def call(array:, number:)
+      super(object: array, number: number)
+    end
   end
 end

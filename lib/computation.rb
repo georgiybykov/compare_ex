@@ -33,8 +33,8 @@ class Computation
     array = create_unique_array(array_size)
 
     acc << {
-      array: FindInArray.new.call(array: array, number: number),
-      set: FindInSet.new.call(set: array.to_set, number: number)
+      array: Finders::FindInArray.new.call(array: array, number: number),
+      set: Finders::FindInSet.new.call(set: array.to_set, number: number)
     }
   end
 end

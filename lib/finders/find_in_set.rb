@@ -2,8 +2,10 @@
 
 require_relative 'base'
 
-class FindInSet < Base
-  def call(set:, number:)
-    super(set, number)
+module Finders
+  class FindInSet < Base
+    def call(set:, number:)
+      super(object: set, number: number)
+    end
   end
 end

@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
-require_relative 'base'
+require './lib/concerns/benchmarkable'
 
 module Finders
-  class FindInSet < Base
+  class FindInSet
+    prepend Benchmarkable
+
     def call(set:, number:)
-      super(object: set, number: number)
+      set.include?(number)
     end
   end
 end

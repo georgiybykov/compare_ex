@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
-require_relative 'base'
+require './lib/concerns/benchmarkable'
 
 module Finders
-  class FindInArray < Base
+  class FindInArray
+    prepend Benchmarkable
+
     def call(array:, number:)
-      super(object: array, number: number)
+      array.include?(number)
     end
   end
 end
